@@ -1,4 +1,2 @@
 # Animal-Store
 proba, proba, 1, 2, 3
-ЕГН
-
