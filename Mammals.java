@@ -1,47 +1,13 @@
 package Project;
 
-public class Mammals {
+public class Mammals extends Animals {
+    private double price;
     private int quantity;
+    private int id;
     private String gender;
     private int age;
-    private String type;
 
-    public Mammals(int quantity, String gender, int age, String type) {
-        this.quantity = quantity;
-        this.gender = gender;
-        this.age = age;
-        this.type = type;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public Mammals(double price, int quantity, int id, String gender, int age) {
+        super(price, quantity, id, gender, age);
     }
 }

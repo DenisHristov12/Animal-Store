@@ -1,5 +1,4 @@
 package Project;
-//gregnnglksdnkseifhewibgeskjsdjkvbesijkbj
 
 public class Employees {
     private String name;
@@ -8,14 +7,16 @@ public class Employees {
     private String graduation;
     private String gender;
     private String position;
+    private int experience;
 
-    public Employees(String name, double salary, int age, String graduation, String gender, String position) {
+    public Employees(String name, double salary, int age, String graduation, String gender, String position, int experience) {
         this.name = name;
         this.salary = salary;
         this.age = age;
         this.graduation = graduation;
         this.gender = gender;
         this.position = position;
+        this.experience = experience;
     }
 
     public String getName() {
@@ -64,5 +65,13 @@ public class Employees {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 }
