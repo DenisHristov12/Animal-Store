@@ -5,9 +5,9 @@ public class Animals {
     private int quantity;
     private int id;
     private String gender;
-    private int age;
+    private double age;
 
-    public Animals(double price, int quantity, int id, String gender, int age) {
+    public Animals(double price, int quantity, int id, String gender, double age) {
         this.price = price;
         this.quantity = quantity;
         this.id = id;
@@ -47,7 +47,7 @@ public class Animals {
         this.gender = gender;
     }
 
-    public int getAge() {
+    public double getAge() {
         return age;
     }
 

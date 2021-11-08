@@ -10,15 +10,19 @@ public class Store {
     private String owner;
     private String adress;
 
-    private ArrayList<Animals> animals = new ArrayList<>();
+    private ArrayList<Mammals> mammals = new ArrayList<>();
+    private ArrayList<Reptiles> reptiles = new ArrayList<>();
+    private ArrayList<Fishes> fishes = new ArrayList<>();
 
     private ArrayList<Employees> employees = new ArrayList<>();
 
-    public Store(String name, String owner, String adress, ArrayList<Animals> animals, ArrayList<Employees> employees) {
+    public Store(String name, String owner, String adress, ArrayList<Mammals> mammals, ArrayList<Reptiles> reptiles, ArrayList<Fishes> fishes, ArrayList<Employees> employees) {
         this.name = name;
         this.owner = owner;
         this.adress = adress;
-        this.animals = animals;
+        this.mammals = mammals;
+        this.reptiles = reptiles;
+        this.fishes = fishes;
         this.employees = employees;
     }
 
@@ -43,6 +47,31 @@ public class Store {
         if(reason.equals("Stealing") && name.equals("Georgi") || name.equals("Katerina") || name.equals("Petur")){
             employees.remove(employeeIndex);
         }
+    }
+
+    public void addMammals(ArrayList<Mammals> mammals){
+        mammals.add(new Dog(300, 10, 1, "M", 0.3));
+        mammals.add(new Dog(300, 10, 2, "F", 0.3));
+        mammals.add(new Cat(150, 10, 3, "M", 0.3));
+        mammals.add(new Cat(150, 10, 4, "F", 0.3));
+        mammals.add(new Rabbit(80, 10, 5, "M", 0.3));
+        mammals.add(new Rabbit(80, 10, 6, "F", 0.3));
+    }
+
+    public void addReptiles(ArrayList<Reptiles> reptiles) {
+        reptiles.add(new Snake(400, 10, 1, "M", 1));
+        reptiles.add(new Snake(400, 10, 2, "F", 1));
+        reptiles.add(new Lizard(200, 10, 3, "M", 1));
+        reptiles.add(new Lizard(200, 10, 4, "F", 1));
+    }
+
+    public void addFishes(ArrayList<Fishes> fishes){
+        fishes.add(new GoldenFish(60, 10, 1, "M", 0.5));
+        fishes.add(new GoldenFish(60, 10, 2, "F", 0.5));
+        fishes.add(new Gupa(50, 10, 3, "M", 0.5));
+        fishes.add(new Gupa(50, 10, 4, "F", 0.5));
+        fishes.add(new Heller(30, 10, 5, "M", 0.5));
+        fishes.add(new Heller(30, 10, 6, "F", 0.5));
     }
 
 
