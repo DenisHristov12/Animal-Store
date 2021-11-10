@@ -26,28 +26,40 @@ public class Store {
         this.employees = employees;
     }
 
-    Employees employee1 = new Employees("Georgi", 800, 25, "University", "M", "Seller", 5);
+    /*Employees employee1 = new Employees("Georgi", 800, 25, "University", "M", "Seller", 5);
     Employees employee2 = new Employees("Katerina", 700, 23, "Secondary education", "F", "Cleaner", 2);
     Employees employee3 = new Employees("Petur", 650, 27, "Secondary education", "M", "Feeder", 1);
-    Employees employee4 = new Employees("Bilqna", 650, 20, "Elementary education", "F", "Cleaner", 0);
+    Employees employee4 = new Employees("Bilqna", 650, 20, "Elementary education", "F", "Cleaner", 0);*/
 
 
-    public void HireEmployee(int age, int experience, String graduation){
-        if(age > 20 && experience >= 1 && graduation.equals("Secondary education") || graduation.equals("University")){
-            employees.add(employee1);
-            employees.add(employee2);
-            employees.add(employee3);
-            employees.add(employee4);
+    public void HireEmployees(){
+        System.out.println("Input employee graduation: ");
+        String graduation = scan.nextLine();
+        System.out.println("Input employee age: ");
+        int age = scan.nextInt();
+        System.out.println("Input employee experience: ");
+        int experience = scan.nextInt();
+
+
+        if(graduation.equals("Secondary education") || graduation.equals("University")
+                && age > 20 && experience >= 1){
+            employees.add(new Employees("Georgi", 800, 26, "University", "M", "Seller", 5));
+            employees.add(new Employees("Mariq", 700, 23, "Secondary education", "F", "Cleaner", 3));
+            employees.add(new Employees("Petur", 500, 21, "Secondary education", "M", "Feeder", 1));
         }
         System.out.println("Hired employees: " + employees.size());
         System.out.println();
     }
 
-    public void FireEmployee(String reason, String name){
+    public void FireEmployee(){
+        System.out.println("Input name: ");
+        String name = scan.nextLine();
         System.out.println("Input reason: ");
-        reason = scan.nextLine();
-        int employeeIndex = scan.nextInt();
-        if(reason.equals("Stealing") && name.equals("Georgi") || name.equals("Katerina") || name.equals("Petur")){
+        String reason = scan.nextLine();
+
+        if((name.equals("Georgi") || name.equals("Maria") || name.equals("Petur")) && reason.equals("Stealing")){
+            System.out.println("Input employee index: ");
+            int employeeIndex = scan.nextInt();
             employees.remove(employeeIndex);
         }
         System.out.println("Employees: " + employees.size());
@@ -86,7 +98,7 @@ public class Store {
     }
 
     int myAnimals;
-    int maxAnimals = 60;
+    int maxAnimals = 160;
     int quantity;
 
     public void SupplyAnimals(int supplyQuantity){
@@ -95,7 +107,7 @@ public class Store {
 
         System.out.println("My Animals: " + myAnimals);
 
-        System.out.println("You have: " + (maxAnimals - quantity) + " space!");
+        System.out.println("You have: " + (maxAnimals - quantity) + " storage space!");
 
         System.out.println("Input supply quantity: ");
         supplyQuantity = scan.nextInt();

@@ -16,18 +16,15 @@ public class RunProgram {
         Store myStore = new Store("Animal Store", "Ivan", "Georgi Dimitrov 57", mammals, reptiles, fishes, employees);
 
 
+        myStore.HireEmployees();
 
-        myStore.HireEmployee(25, 5, "University");
-        myStore.HireEmployee(23, 2, "Secondary education");
-        myStore.HireEmployee(27, 1, "Secondary education");
-        myStore.FireEmployee("Stealing", "Georgi");
 
+        myStore.FireEmployee();
 
 
         myStore.addMammals(mammals);
         myStore.addReptiles(reptiles);
         myStore.addFishes(fishes);
-
 
 
         myStore.SupplyAnimals(0);
