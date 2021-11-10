@@ -39,14 +39,19 @@ public class Store {
             employees.add(employee3);
             employees.add(employee4);
         }
+        System.out.println("Hired employees: " + employees.size());
+        System.out.println();
     }
 
     public void FireEmployee(String reason, String name){
+        System.out.println("Input reason: ");
         reason = scan.nextLine();
         int employeeIndex = scan.nextInt();
         if(reason.equals("Stealing") && name.equals("Georgi") || name.equals("Katerina") || name.equals("Petur")){
             employees.remove(employeeIndex);
         }
+        System.out.println("Employees: " + employees.size());
+        System.out.println();
     }
 
     public void addMammals(ArrayList<Mammals> mammals){
@@ -56,6 +61,8 @@ public class Store {
         mammals.add(new Cat(150, 10, 4, "F", 0.3));
         mammals.add(new Rabbit(80, 10, 5, "M", 0.3));
         mammals.add(new Rabbit(80, 10, 6, "F", 0.3));
+        System.out.println("Mammals: " + mammals.size() + " species!");
+        System.out.println();
     }
 
     public void addReptiles(ArrayList<Reptiles> reptiles) {
@@ -63,6 +70,8 @@ public class Store {
         reptiles.add(new Snake(400, 10, 2, "F", 1));
         reptiles.add(new Lizard(200, 10, 3, "M", 1));
         reptiles.add(new Lizard(200, 10, 4, "F", 1));
+        System.out.println("Reptiles: " + reptiles.size() + " species!");
+        System.out.println();
     }
 
     public void addFishes(ArrayList<Fishes> fishes){
@@ -72,57 +81,83 @@ public class Store {
         fishes.add(new Gupa(50, 10, 4, "F", 0.5));
         fishes.add(new Heller(30, 10, 5, "M", 0.5));
         fishes.add(new Heller(30, 10, 6, "F", 0.5));
+        System.out.println("Fishes: " + fishes.size() + " species!");
+        System.out.println();
     }
 
+    int myAnimals;
+    int maxAnimals = 60;
+    int quantity;
 
-    int maxAnimals;
-    public void SupplyAnimals(int quantity, int supplyQuantity){
-        maxAnimals = 60;
+    public void SupplyAnimals(int supplyQuantity){
+        quantity = 0;
+        myAnimals = 0;
+
+        System.out.println("My Animals: " + myAnimals);
+
+        System.out.println("You have: " + (maxAnimals - quantity) + " space!");
+
+        System.out.println("Input supply quantity: ");
         supplyQuantity = scan.nextInt();
 
-        if(supplyQuantity > 60){
+        if(supplyQuantity > (maxAnimals - quantity)){
             System.out.println("No available space!");
-        }else{
-            quantity+=supplyQuantity;
+            System.out.println("You have " + (maxAnimals - quantity) + " space left!");
+
+            System.out.println("Input supply quantity: ");
+            supplyQuantity = scan.nextInt();
+            quantity = myAnimals + supplyQuantity;
+
+        }else if(supplyQuantity < (maxAnimals - quantity)){
+            quantity = myAnimals + supplyQuantity;
         }
 
-        if(quantity < 20 ){
+        System.out.println("You have: " + quantity + " animals!");
+        System.out.println();
+
+        if(quantity < 20){
             ReSupply(maxAnimals - quantity);
         }
     }
 
 
-    public void Sell(int quantity, int sellQuantity){
-        String animalType = scan.nextLine();
+    public void Sell(int sellQuantity){
+        System.out.println("Input sell quantity: ");
         sellQuantity = scan.nextInt();
 
-        if      (animalType.equals("Dogs") ||
-                animalType.equals("Cats") ||
-                animalType.equals("Rabbits") ||
-                animalType.equals("Snakes") ||
-                animalType.equals("Lizards") ||
-                animalType.equals("GoldenFish") ||
-                animalType.equals("Heller") ||
-                animalType.equals("Gupa") && sellQuantity >= 1){
-            quantity -= sellQuantity;
+        if(sellQuantity > quantity){
+            System.out.println("You don't have that much animals!");
+            System.out.println("Input sell quantity: ");
+
+            sellQuantity = scan.nextInt();
+            quantity = quantity - sellQuantity;
+        } else if(sellQuantity >= 1){
+            quantity = quantity - sellQuantity;
         }
+
+        System.out.println("You have left: " + quantity + " animals!");
+        System.out.println();
     }
 
 
+    int freeSpace;
+    public void ReSupply(int quantity1){
+        freeSpace = maxAnimals - quantity;
+        System.out.println("You have: " + freeSpace + " free space!");
 
-    public void ReSupply(int quantity){
-        String animalType = scan.nextLine();
+        System.out.println("Input resupply quantity: ");
         int reSupplyQuantity = scan.nextInt();
 
-        if      (animalType.equals("Dogs") ||
-                animalType.equals("Cats") ||
-                animalType.equals("Rabbits") ||
-                animalType.equals("Snakes") ||
-                animalType.equals("Lizards") ||
-                animalType.equals("GoldenFish") ||
-                animalType.equals("Heller") ||
-                animalType.equals("Gupa") && reSupplyQuantity <= 20){
-            quantity += reSupplyQuantity;
+        if(reSupplyQuantity > (maxAnimals - quantity)){
+            System.out.println("You don't have that much space!");
+            System.out.println("Input resupply quantity in range: ");
+
+            reSupplyQuantity = scan.nextInt();
+            quantity = quantity + reSupplyQuantity;
+        }else if(reSupplyQuantity < (maxAnimals - quantity)){
+            quantity = quantity + reSupplyQuantity;
         }
+
+        System.out.println("You have: " + quantity + " animals!" );
     }
 }
