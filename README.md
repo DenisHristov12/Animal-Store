@@ -5,4 +5,4 @@
 4. Add animal food 
 5. Add what animal we are selling
 6. Add animal breeds
-7. Add owner
+7. Add owner/manager
