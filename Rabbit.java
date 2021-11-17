@@ -6,9 +6,11 @@ public class Rabbit extends Mammals{
     private int id;
     private String gender;
     private double age;
+    private String breed;
 
-    public Rabbit(double price, int quantity, int id, String gender, double age){
+    public Rabbit(double price, int quantity, int id, String gender, double age, String breed){
         super(price, quantity, id, gender, age);
+        this.breed = breed;
     }
 
     @Override
@@ -59,5 +61,13 @@ public class Rabbit extends Mammals{
     @Override
     public void setAge(double age) {
         this.age = age;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 }

@@ -19,7 +19,7 @@ public class RunProgram {
         myStore.HireEmployees();
 
 
-        myStore.FireEmployee();
+        //myStore.FireEmployee();
 
 
         myStore.addMammals(mammals);

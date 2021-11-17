@@ -26,11 +26,7 @@ public class Store {
         this.employees = employees;
     }
 
-    /*Employees employee1 = new Employees("Georgi", 800, 25, "University", "M", "Seller", 5);
-    Employees employee2 = new Employees("Katerina", 700, 23, "Secondary education", "F", "Cleaner", 2);
-    Employees employee3 = new Employees("Petur", 650, 27, "Secondary education", "M", "Feeder", 1);
-    Employees employee4 = new Employees("Bilqna", 650, 20, "Elementary education", "F", "Cleaner", 0);*/
-
+    Owner newOwner = new Owner("Ivan", "Ivanov", 42,"M", "University");
 
     public void HireEmployees(){
         System.out.println("Input employee graduation: ");
@@ -43,9 +39,9 @@ public class Store {
 
         if(graduation.equals("Secondary education") || graduation.equals("University")
                 && age > 20 && experience >= 1){
-            employees.add(new Employees("Georgi", 800, 26, "University", "M", "Seller", 5));
-            employees.add(new Employees("Mariq", 700, 23, "Secondary education", "F", "Cleaner", 3));
-            employees.add(new Employees("Petur", 500, 21, "Secondary education", "M", "Feeder", 1));
+            employees.add(new Employees("Georgi", 800, age, graduation, "M", "Seller", experience));
+            employees.add(new Employees("Mariq", 700, age, graduation, "F", "Cleaner", experience));
+            employees.add(new Employees("Petur", 500, age, graduation, "M", "Feeder", experience));
         }
         System.out.println("Hired employees: " + employees.size());
         System.out.println();
@@ -57,7 +53,7 @@ public class Store {
         System.out.println("Input reason: ");
         String reason = scan.nextLine();
 
-        if((name.equals("Georgi") || name.equals("Maria") || name.equals("Petur")) && reason.equals("Stealing")){
+        if((name.equals("Georgi") || name.equals("Mariq") || name.equals("Petur")) && reason.equals("Stealing")){
             System.out.println("Input employee index: ");
             int employeeIndex = scan.nextInt();
             employees.remove(employeeIndex);
@@ -67,21 +63,21 @@ public class Store {
     }
 
     public void addMammals(ArrayList<Mammals> mammals){
-        mammals.add(new Dog(300, 10, 1, "M", 0.3));
-        mammals.add(new Dog(300, 10, 2, "F", 0.3));
-        mammals.add(new Cat(150, 10, 3, "M", 0.3));
-        mammals.add(new Cat(150, 10, 4, "F", 0.3));
-        mammals.add(new Rabbit(80, 10, 5, "M", 0.3));
-        mammals.add(new Rabbit(80, 10, 6, "F", 0.3));
+        mammals.add(new Dog(300, 10, 1, "M", 0.3, "German shepard"));
+        mammals.add(new Dog(300, 10, 2, "F", 0.3, "Golden retriever"));
+        mammals.add(new Cat(150, 10, 3, "M", 0.3, "Persian"));
+        mammals.add(new Cat(150, 10, 4, "F", 0.3, "Scottish fold"));
+        mammals.add(new Rabbit(80, 10, 5, "M", 0.3, "Holland lop"));
+        mammals.add(new Rabbit(80, 10, 6, "F", 0.3, "Dutch lop"));
         System.out.println("Mammals: " + mammals.size() + " species!");
         System.out.println();
     }
 
     public void addReptiles(ArrayList<Reptiles> reptiles) {
-        reptiles.add(new Snake(400, 10, 1, "M", 1));
-        reptiles.add(new Snake(400, 10, 2, "F", 1));
-        reptiles.add(new Lizard(200, 10, 3, "M", 1));
-        reptiles.add(new Lizard(200, 10, 4, "F", 1));
+        reptiles.add(new Snake(400, 10, 1, "M", 1, "Boa"));
+        reptiles.add(new Snake(400, 10, 2, "F", 1, "Python"));
+        reptiles.add(new Lizard(200, 10, 3, "M", 1, "Veiled chameleon"));
+        reptiles.add(new Lizard(200, 10, 4, "F", 1, "Leoprard gecko"));
         System.out.println("Reptiles: " + reptiles.size() + " species!");
         System.out.println();
     }

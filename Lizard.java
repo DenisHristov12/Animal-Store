@@ -6,9 +6,11 @@ public class Lizard extends Reptiles{
     private int id;
     private String gender;
     private double age;
+    private String kind;
 
-    public Lizard(double price, int quantity, int id, String gender, double age){
+    public Lizard(double price, int quantity, int id, String gender, double age, String kind){
         super(price, quantity, id, gender, age);
+        this.kind = kind;
     }
 
     @Override
@@ -59,5 +61,13 @@ public class Lizard extends Reptiles{
     @Override
     public void setAge(double age) {
         this.age = age;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
     }
 }
