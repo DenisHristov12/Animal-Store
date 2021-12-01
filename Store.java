@@ -28,25 +28,6 @@ public class Store {
 
     Owner newOwner = new Owner("Ivan", "Ivanov", 42,"M", "University");
 
-    public void HireEmployees(){
-        System.out.println("Input employee graduation: ");
-        String graduation = scan.nextLine();
-        System.out.println("Input employee age: ");
-        int age = scan.nextInt();
-        System.out.println("Input employee experience: ");
-        int experience = scan.nextInt();
-
-
-        if(graduation.equals("Secondary education") || graduation.equals("University")
-                && age > 20 && experience >= 1){
-            employees.add(new Employees("Georgi", 800, age, graduation, "M", "Seller", experience));
-            employees.add(new Employees("Mariq", 700, age, graduation, "F", "Cleaner", experience));
-            employees.add(new Employees("Petur", 500, age, graduation, "M", "Feeder", experience));
-        }
-        System.out.println("Hired employees: " + employees.size());
-        System.out.println();
-    }
-
     public void FireEmployee(){
         System.out.println("Input name: ");
         String name = scan.nextLine();
