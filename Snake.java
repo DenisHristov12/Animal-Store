@@ -1,5 +1,7 @@
 package Project;
 
+import java.util.ArrayList;
+
 public class Snake extends Reptiles {
     private double price;
     private int quantity;
@@ -69,5 +71,14 @@ public class Snake extends Reptiles {
 
     public void setKind(String kind) {
         this.kind = kind;
+    }
+
+    public static void addSnakes(){
+        ArrayList<Snake> snakes = new ArrayList<>();
+
+        snakes.add(new Snake(500, 5, 1, "M", 0.5, "Boa"));
+        snakes.add(new Snake(500, 5, 1, "F", 0.5, "Boa"));
+        snakes.add(new Snake(400, 5, 2, "M", 0.5, "Python"));
+        snakes.add(new Snake(400, 5, 2, "F", 0.5, "Python"));
     }
 }

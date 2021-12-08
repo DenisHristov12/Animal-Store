@@ -1,5 +1,7 @@
 package Project;
 
+import java.util.ArrayList;
+
 public class Lizard extends Reptiles{
     private double price;
     private int quantity;
@@ -69,5 +71,14 @@ public class Lizard extends Reptiles{
 
     public void setKind(String kind) {
         this.kind = kind;
+    }
+
+    public static void addLizards(){
+        ArrayList<Lizard> lizards = new ArrayList<>();
+
+        lizards.add(new Lizard(500, 5, 1, "M", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(500, 5, 1, "F", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(400, 5, 2, "M", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(400, 5, 2, "F", 0.5, "Leoprard gecko"));
     }
 }

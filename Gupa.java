@@ -1,5 +1,7 @@
 package Project;
 
+import java.util.ArrayList;
+
 public class Gupa extends Fishes{
     private double price;
     private int quantity;
@@ -59,5 +61,12 @@ public class Gupa extends Fishes{
     @Override
     public void setAge(double age) {
         this.age = age;
+    }
+
+    public static void addGupas(){
+        ArrayList<Gupa> gupas = new ArrayList<>();
+
+        gupas.add(new Gupa(100, 10, 1, "M", 0.3));
+        gupas.add(new Gupa(100, 10, 1, "F", 0.3));
     }
 }

@@ -10,75 +10,21 @@ public class Store {
     private String owner;
     private String adress;
 
-    private ArrayList<Mammals> mammals = new ArrayList<>();
-    private ArrayList<Reptiles> reptiles = new ArrayList<>();
-    private ArrayList<Fishes> fishes = new ArrayList<>();
-
-    private ArrayList<Employees> employees = new ArrayList<>();
-
-    public Store(String name, String owner, String adress, ArrayList<Mammals> mammals, ArrayList<Reptiles> reptiles, ArrayList<Fishes> fishes, ArrayList<Employees> employees) {
+    public Store(String name, String owner, String adress) {
         this.name = name;
         this.owner = owner;
         this.adress = adress;
-        this.mammals = mammals;
-        this.reptiles = reptiles;
-        this.fishes = fishes;
-        this.employees = employees;
+
     }
 
     Owner newOwner = new Owner("Ivan", "Ivanov", 42,"M", "University");
-
-    public void FireEmployee(){
-        System.out.println("Input name: ");
-        String name = scan.nextLine();
-        System.out.println("Input reason: ");
-        String reason = scan.nextLine();
-
-        if((name.equals("Georgi") || name.equals("Mariq") || name.equals("Petur")) && reason.equals("Stealing")){
-            System.out.println("Input employee index: ");
-            int employeeIndex = scan.nextInt();
-            employees.remove(employeeIndex);
-        }
-        System.out.println("Employees: " + employees.size());
-        System.out.println();
-    }
-
-    public void addMammals(ArrayList<Mammals> mammals){
-        mammals.add(new Dog(300, 10, 1, "M", 0.3, "German shepard"));
-        mammals.add(new Dog(300, 10, 2, "F", 0.3, "Golden retriever"));
-        mammals.add(new Cat(150, 10, 3, "M", 0.3, "Persian"));
-        mammals.add(new Cat(150, 10, 4, "F", 0.3, "Scottish fold"));
-        mammals.add(new Rabbit(80, 10, 5, "M", 0.3, "Holland lop"));
-        mammals.add(new Rabbit(80, 10, 6, "F", 0.3, "Dutch lop"));
-        System.out.println("Mammals: " + mammals.size() + " species!");
-        System.out.println();
-    }
-
-    public void addReptiles(ArrayList<Reptiles> reptiles) {
-        reptiles.add(new Snake(400, 10, 1, "M", 1, "Boa"));
-        reptiles.add(new Snake(400, 10, 2, "F", 1, "Python"));
-        reptiles.add(new Lizard(200, 10, 3, "M", 1, "Veiled chameleon"));
-        reptiles.add(new Lizard(200, 10, 4, "F", 1, "Leoprard gecko"));
-        System.out.println("Reptiles: " + reptiles.size() + " species!");
-        System.out.println();
-    }
-
-    public void addFishes(ArrayList<Fishes> fishes){
-        fishes.add(new GoldenFish(60, 10, 1, "M", 0.5));
-        fishes.add(new GoldenFish(60, 10, 2, "F", 0.5));
-        fishes.add(new Gupa(50, 10, 3, "M", 0.5));
-        fishes.add(new Gupa(50, 10, 4, "F", 0.5));
-        fishes.add(new Heller(30, 10, 5, "M", 0.5));
-        fishes.add(new Heller(30, 10, 6, "F", 0.5));
-        System.out.println("Fishes: " + fishes.size() + " species!");
-        System.out.println();
-    }
 
     int myAnimals;
     int maxAnimals = 160;
     int quantity;
 
-    public void SupplyAnimals(int supplyQuantity){
+    public void SupplyAnimals(){
+        int supplyQuantity;
         quantity = 0;
         myAnimals = 0;
 
@@ -110,7 +56,9 @@ public class Store {
     }
 
 
-    public void Sell(int sellQuantity){
+    public void Sell(){
+        int sellQuantity;
+
         System.out.println("Input sell quantity: ");
         sellQuantity = scan.nextInt();
 
@@ -149,4 +97,26 @@ public class Store {
 
         System.out.println("You have: " + quantity + " animals!" );
     }
+
+    public void WorkTime(){
+        double startWorkTime = 8.00;
+        double endWorkTime = 16.00;
+
+        System.out.println("Input time of the day: ");
+        double inputTime = scan.nextDouble();
+
+
+        if(inputTime < 8 || inputTime > 16){
+            System.out.println("The store is not working!");
+        }else{
+            SupplyAnimals();
+            while(quantity > 20) {
+                Sell();
+                if(quantity < 20){
+                    ReSupply(0);
+                }
+            }
+        }
+    }
+
 }

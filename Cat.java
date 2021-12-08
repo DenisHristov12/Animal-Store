@@ -1,5 +1,7 @@
 package Project;
 
+import java.util.ArrayList;
+
 public class Cat extends Mammals{
     private double price;
     private int quantity;
@@ -69,5 +71,14 @@ public class Cat extends Mammals{
 
     public void setBreed(String breed) {
         this.breed = breed;
+    }
+
+    public static void addCats(){
+        ArrayList<Cat> cats = new ArrayList<>();
+
+        cats.add(new Cat(1000, 5, 1, "M", 0.3, "Persian"));
+        cats.add(new Cat(1000, 5, 1, "F", 0.3, "Persian"));
+        cats.add(new Cat(900, 5, 2, "M", 0.3, "Scottish fold"));
+        cats.add(new Cat(900, 5, 2, "F", 0.3, "Scottish fold"));
     }
 }
