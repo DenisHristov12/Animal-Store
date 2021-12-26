@@ -13,6 +13,8 @@ public class GoldenFish extends Fishes {
         super(price, quantity, id, gender, age);
     }
 
+    public static ArrayList<GoldenFish> goldenFishes = new ArrayList<>();
+
     @Override
     public double getPrice() {
         return price;
@@ -64,9 +66,12 @@ public class GoldenFish extends Fishes {
     }
 
     public static void addGoldenFishes(){
-        ArrayList<GoldenFish> goldenFishes = new ArrayList<>();
-
         goldenFishes.add(new GoldenFish(100, 10, 1, "M", 0.3));
         goldenFishes.add(new GoldenFish(100, 10, 1, "F", 0.3));
+    }
+
+    @Override
+    public String toString() {
+        return "GoldenFish: " + gender + ": " + quantity + "\n";
     }
 }

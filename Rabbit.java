@@ -15,6 +15,8 @@ public class Rabbit extends Mammals{
         this.breed = breed;
     }
 
+    public static ArrayList<Rabbit> rabits = new ArrayList<>();
+
     @Override
     public double getPrice() {
         return price;
@@ -74,11 +76,14 @@ public class Rabbit extends Mammals{
     }
 
     public static void addRabbits(){
-        ArrayList<Rabbit> rabits = new ArrayList<>();
-
         rabits.add(new Rabbit(500, 5, 1, "M", 0.3, "Holland lop"));
         rabits.add(new Rabbit(500, 5, 1, "F", 0.3, "Holland lop"));
         rabits.add(new Rabbit(400, 5, 2, "M", 0.3, "Dutch lop"));
         rabits.add(new Rabbit(400, 5, 2, "F", 0.3, "Dutch lop"));
+    }
+
+    @Override
+    public String toString() {
+        return breed + " " + gender + ": " + quantity + "\n";
     }
 }

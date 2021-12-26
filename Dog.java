@@ -15,6 +15,8 @@ public class Dog extends Mammals {
         this.breed = breed;
     }
 
+    public static ArrayList<Dog> dogs = new ArrayList<>();
+
     @Override
     public double getPrice() {
         return price;
@@ -74,11 +76,14 @@ public class Dog extends Mammals {
     }
 
     public static void addDogs(){
-        ArrayList<Dog> dogs = new ArrayList<>();
-
         dogs.add(new Dog(1000, 5, 1, "M", 0.3, "German shepard"));
         dogs.add(new Dog(1000, 5, 1, "F", 0.3, "German shepard"));
         dogs.add(new Dog(900, 5, 2, "M", 0.3, "Golden retriever"));
         dogs.add(new Dog(900, 5, 2, "F", 0.3, "Golden retriever"));
+    }
+
+    @Override
+    public String toString() {
+        return breed + " " + gender + ": " + quantity + "\n";
     }
 }

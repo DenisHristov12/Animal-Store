@@ -15,6 +15,8 @@ public class Lizard extends Reptiles{
         this.kind = kind;
     }
 
+    public static ArrayList<Lizard> lizards = new ArrayList<>();
+
     @Override
     public double getPrice() {
         return price;
@@ -74,11 +76,14 @@ public class Lizard extends Reptiles{
     }
 
     public static void addLizards(){
-        ArrayList<Lizard> lizards = new ArrayList<>();
-
         lizards.add(new Lizard(500, 5, 1, "M", 0.5, "Veiled chameleon"));
         lizards.add(new Lizard(500, 5, 1, "F", 0.5, "Veiled chameleon"));
         lizards.add(new Lizard(400, 5, 2, "M", 0.5, "Leoprard gecko"));
         lizards.add(new Lizard(400, 5, 2, "F", 0.5, "Leoprard gecko"));
+    }
+
+    @Override
+    public String toString() {
+        return kind + " " + gender + ": " + quantity + "\n";
     }
 }

@@ -98,25 +98,14 @@ public class Store {
         System.out.println("You have: " + quantity + " animals!" );
     }
 
-    public void WorkTime(){
-        double startWorkTime = 8.00;
-        double endWorkTime = 16.00;
 
-        System.out.println("Input time of the day: ");
-        double inputTime = scan.nextDouble();
-
-
-        if(inputTime < 8 || inputTime > 16){
-            System.out.println("The store is not working!");
-        }else{
-            SupplyAnimals();
-            while(quantity > 20) {
-                Sell();
-                if(quantity < 20){
-                    ReSupply(0);
-                }
-            }
+    /*SupplyAnimals();
+    while(quantity > 20) {
+        Sell();
+        if(quantity < 20){
+            ReSupply(0);
         }
-    }
+    }*/
+
 
 }

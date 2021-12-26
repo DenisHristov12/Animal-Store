@@ -15,6 +15,8 @@ public class Cat extends Mammals{
         this.breed = breed;
     }
 
+    public static ArrayList<Cat> cats = new ArrayList<>();
+
     @Override
     public double getPrice() {
         return price;
@@ -74,11 +76,14 @@ public class Cat extends Mammals{
     }
 
     public static void addCats(){
-        ArrayList<Cat> cats = new ArrayList<>();
-
         cats.add(new Cat(1000, 5, 1, "M", 0.3, "Persian"));
         cats.add(new Cat(1000, 5, 1, "F", 0.3, "Persian"));
         cats.add(new Cat(900, 5, 2, "M", 0.3, "Scottish fold"));
         cats.add(new Cat(900, 5, 2, "F", 0.3, "Scottish fold"));
+    }
+
+    @Override
+    public String toString() {
+        return breed + " " + gender + ": " + quantity + "\n";
     }
 }

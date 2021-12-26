@@ -13,6 +13,8 @@ public class Heller extends Fishes{
         super(price, quantity, id, gender, age);
     }
 
+    public static ArrayList<Heller> hellers = new ArrayList<>();
+
     @Override
     public double getPrice() {
         return price;
@@ -64,9 +66,12 @@ public class Heller extends Fishes{
     }
 
     public static void addHellers(){
-        ArrayList<Heller> hellers = new ArrayList<>();
-
         hellers.add(new Heller(100, 10, 1, "M", 0.3));
         hellers.add(new Heller(100, 10, 1, "F", 0.3));
+    }
+
+    @Override
+    public String toString() {
+        return "Heller: " + gender + ": " + quantity + "\n";
     }
 }

@@ -13,6 +13,8 @@ public class Gupa extends Fishes{
         super(price, quantity, id, gender, age);
     }
 
+    public static ArrayList<Gupa> gupas = new ArrayList<>();
+
     @Override
     public double getPrice() {
         return price;
@@ -64,9 +66,12 @@ public class Gupa extends Fishes{
     }
 
     public static void addGupas(){
-        ArrayList<Gupa> gupas = new ArrayList<>();
-
         gupas.add(new Gupa(100, 10, 1, "M", 0.3));
         gupas.add(new Gupa(100, 10, 1, "F", 0.3));
+    }
+
+    @Override
+    public String toString() {
+        return "Gupa: " + gender + ": " + quantity + "\n";
     }
 }

@@ -15,6 +15,8 @@ public class Snake extends Reptiles {
         this.kind = kind;
     }
 
+    public static ArrayList<Snake> snakes = new ArrayList<>();
+
     @Override
     public double getPrice() {
         return price;
@@ -74,11 +76,14 @@ public class Snake extends Reptiles {
     }
 
     public static void addSnakes(){
-        ArrayList<Snake> snakes = new ArrayList<>();
-
         snakes.add(new Snake(500, 5, 1, "M", 0.5, "Boa"));
         snakes.add(new Snake(500, 5, 1, "F", 0.5, "Boa"));
         snakes.add(new Snake(400, 5, 2, "M", 0.5, "Python"));
         snakes.add(new Snake(400, 5, 2, "F", 0.5, "Python"));
+    }
+
+    @Override
+    public String toString() {
+        return kind + " " + gender + ": " + quantity + "\n";
     }
 }

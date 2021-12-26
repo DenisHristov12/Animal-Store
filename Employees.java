@@ -11,6 +11,10 @@ public class Employees {
     private String position;
     private int experience;
 
+    public Employees(){
+
+    }
+
     public Employees(String name, double salary, int age, String graduation, String gender, String position, int experience) {
         this.name = name;
         this.salary = salary;
@@ -20,6 +24,8 @@ public class Employees {
         this.position = position;
         this.experience = experience;
     }
+
+    public static ArrayList<Employees> employees = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -77,9 +83,21 @@ public class Employees {
         this.experience = experience;
     }
 
-    public static void addEmployees(){
-        ArrayList<Employees> employees = new ArrayList<>();
+    @Override
+    public String toString() {
+        return "Employees{" +
+                "name='" + name + '\'' +
+                ", salary=" + salary +
+                ", age=" + age +
+                ", graduation='" + graduation + '\'' +
+                ", gender='" + gender + '\'' +
+                ", position='" + position + '\'' +
+                ", experience=" + experience +
+                '}';
+    }
 
+    /*
+    public static void addEmployees(){
         Employees employee1 = new Employees("Ivan", 600, 17, "Primary education", "M", "Seller", 1);
         Employees employee2 = new Employees("Maria", 700, 21, "Secondary education", "F", "Cleaner", 5);
         Employees employee3 = new Employees("Lubomir", 800, 25, "Secondary education", "M", "Seller", 3);
@@ -127,11 +145,12 @@ public class Employees {
             }
         }
 
-        System.out.println();
+        //System.out.println();
 
-        System.out.println("Hired employees: " + " " + employees.size());
-        System.out.println();
-    }
+        //System.out.println("Hired employees: " + " " + employees.size());
+        //System.out.println();
 
+
+    }*/
 }
 
