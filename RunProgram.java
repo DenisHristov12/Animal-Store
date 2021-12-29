@@ -82,6 +82,7 @@ public class RunProgram {
 
                             System.out.println("Enter name for employee " + (i + 1));
                             newEmployees.setName(scan.nextLine());
+                            newEmployees.setName(scan.nextLine());
 
                             System.out.println("Enter salary for employee " + (i + 1));
                             newEmployees.setSalary(scan.nextDouble());
@@ -90,6 +91,7 @@ public class RunProgram {
                             newEmployees.setAge(scan.nextInt());
 
                             System.out.println("Enter graduation for employee " + (i + 1));
+                            newEmployees.setGraduation(scan.nextLine());
                             newEmployees.setGraduation(scan.nextLine());
 
                             System.out.println("Enter gender for employee " + (i + 1));
@@ -116,6 +118,7 @@ public class RunProgram {
                         }
 
                         System.out.println();
+                        System.out.println("Employees: ");
                         System.out.println(employees);
 
                         break;
@@ -126,17 +129,63 @@ public class RunProgram {
             case 2:
                 System.out.println("Welcome customer!");
                 System.out.println("Enter what animal you want to buy:");
+
                 String animal;
                 animal = scan.nextLine();
                 animal = scan.nextLine();
+
                 System.out.println("These are all breeds we have of that animal!");
-                if(animal.equals("Dog")){
-                    Dog.dogs.toString();
-                }else if(animal.equals("Cat")){
-                    Cat.cats.toString();
+
+                switch (animal) {
+                    case "Dog" -> System.out.println(Dog.dogs.toString());
+                    case "Cat" -> System.out.println(Cat.cats.toString());
+                    case "Rabbit" -> System.out.println(Rabbit.rabits.toString());
+                    case "Snake" -> System.out.println(Snake.snakes.toString());
+                    case "Lizard" -> System.out.println(Lizard.lizards.toString());
+                    case "Heller" -> System.out.println(Heller.hellers.toString());
+                    case "Gupa" -> System.out.println(Gupa.gupas.toString());
+                    case "GoldenFish" -> System.out.println(GoldenFish.goldenFishes.toString());
                 }
-                System.out.println("Enter what breed/kind of that animal you want to buy:");
-                String breedOrKind = scan.nextLine();
+
+                System.out.println("Enter what breed/kind and what gender of that animal you want to buy:");
+                System.out.println("Enter breed/kind: ");
+                String breedOrKind;
+                breedOrKind = scan.nextLine();
+                //breedOrKind = scan.nextLine();
+                System.out.println("Enter gender: ");
+                String gender = scan.nextLine();
+
+                if(animal.equals("Dog") && breedOrKind.equals("German shepard") && gender.equals("M")){
+                    Dog.dogs.remove(0);
+                }else if(animal.equals("Dog") && breedOrKind.equals("German shepard") && gender.equals("F")){
+                    Dog.dogs.remove(1);
+                }else if(animal.equals("Dog") && breedOrKind.equals("Golden retriever") && gender.equals("M")){
+                    Dog.dogs.remove(2);
+                }else if(animal.equals("Dog") && breedOrKind.equals("Golden retriever") && gender.equals("F")){
+                    Dog.dogs.remove(3);
+                }
+
+                if(animal.equals("Cat") && breedOrKind.equals("Persian") && gender.equals("M")){
+                    Dog.dogs.remove(0);
+                }else if(animal.equals("Cat") && breedOrKind.equals("Persian") && gender.equals("F")){
+                    Dog.dogs.remove(1);
+                }else if(animal.equals("Cat") && breedOrKind.equals("Scottish fold") && gender.equals("M")){
+                    Dog.dogs.remove(2);
+                }else if(animal.equals("Cat") && breedOrKind.equals("Scottish fold") && gender.equals("F")){
+                    Dog.dogs.remove(3);
+                }
+
+                if(animal.equals("Rabbit") && breedOrKind.equals("Holland lop") && gender.equals("M")){
+                    Dog.dogs.remove(0);
+                }else if(animal.equals("Rabbit") && breedOrKind.equals("Holland lop") && gender.equals("F")){
+                    Dog.dogs.remove(1);
+                }else if(animal.equals("Rabbit") && breedOrKind.equals("Dutch lop") && gender.equals("M")){
+                    Dog.dogs.remove(2);
+                }else if(animal.equals("Rabbit") && breedOrKind.equals("Dutch lop") && gender.equals("F")){
+                    Dog.dogs.remove(3);
+                }
+
+                //System.out.println(Dog.dogs.toString());
                 break;
             default:
                 break;
