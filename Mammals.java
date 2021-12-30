@@ -2,13 +2,12 @@ package Project;
 
 public class Mammals extends Animals {
     private double price;
-    private int quantity;
     private int id;
     private String gender;
     private double age;
 
-    public Mammals(double price, int quantity, int id, String gender, double age) {
-        super(price, quantity, id, gender, age);
+    public Mammals(double price, int id, String gender, double age) {
+        super(price, id, gender, age);
     }
 
     @Override
@@ -19,16 +18,6 @@ public class Mammals extends Animals {
     @Override
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    @Override
-    public int getQuantity() {
-        return quantity;
-    }
-
-    @Override
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     @Override

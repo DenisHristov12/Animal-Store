@@ -24,7 +24,7 @@ public class Store {
     int quantity;
 
     public void SupplyAnimals(){
-        int supplyQuantity;
+        //int supplyQuantity;
         quantity = 0;
         myAnimals = 0;
 
@@ -32,26 +32,83 @@ public class Store {
 
         System.out.println("You have: " + (maxAnimals - quantity) + " storage space!");
 
-        System.out.println("Input supply quantity: ");
-        supplyQuantity = scan.nextInt();
+        //System.out.println("Input supply quantity: ");
+        //supplyQuantity = scan.nextInt();
 
-        if(supplyQuantity > (maxAnimals - quantity)){
-            System.out.println("No available space!");
+        System.out.println("Input how much dogs you want to supply: ");
+        int dogs = scan.nextInt();
+
+        System.out.println("Input how much cats you want to supply: ");
+        int cats = scan.nextInt();
+
+        System.out.println("Input how much rabbits you want to supply: ");
+        int rabbits = scan.nextInt();
+
+        System.out.println("Input how much snakes you want to supply: ");
+        int snakes = scan.nextInt();
+
+        System.out.println("Input how much lizards you want to supply: ");
+        int lizards = scan.nextInt();
+
+        System.out.println("Input how much hellers you want to supply: ");
+        int hellers = scan.nextInt();
+
+        System.out.println("Input how much gupas you want to supply: ");
+        int gupas = scan.nextInt();
+
+        System.out.println("Input how much golden fishes you want to supply: ");
+        int goldenFishes = scan.nextInt();
+
+        if((dogs + cats + rabbits + snakes + lizards + hellers + gupas + goldenFishes) > (maxAnimals - quantity)){
+            System.out.println("You don't have " + (dogs + cats + rabbits + snakes + lizards + hellers + gupas + goldenFishes) + " space!");
             System.out.println("You have " + (maxAnimals - quantity) + " space left!");
 
-            System.out.println("Input supply quantity: ");
-            supplyQuantity = scan.nextInt();
-            quantity = myAnimals + supplyQuantity;
+            //System.out.println("Input supply quantity: ");
+            //supplyQuantity = scan.nextInt();
 
-        }else if(supplyQuantity < (maxAnimals - quantity)){
-            quantity = myAnimals + supplyQuantity;
+            System.out.println("Input how much dogs you want to supply: ");
+            dogs = scan.nextInt();
+
+            System.out.println("Input how much cats you want to supply: ");
+            cats = scan.nextInt();
+
+            System.out.println("Input how much rabbits you want to supply: ");
+            rabbits = scan.nextInt();
+
+            System.out.println("Input how much snakes you want to supply: ");
+            snakes = scan.nextInt();
+
+            System.out.println("Input how much lizards you want to supply: ");
+            lizards = scan.nextInt();
+
+            System.out.println("Input how much hellers you want to supply: ");
+            hellers = scan.nextInt();
+
+            System.out.println("Input how much gupas you want to supply: ");
+            gupas = scan.nextInt();
+
+            System.out.println("Input how much golden fishes you want to supply: ");
+            goldenFishes = scan.nextInt();
+
+
+            quantity = myAnimals + (dogs + cats + rabbits + snakes + lizards + hellers + gupas + goldenFishes);
+
+        }else if((dogs + cats + rabbits + snakes + lizards + hellers + gupas + goldenFishes) < (maxAnimals - quantity)){
+            quantity = myAnimals + (dogs + cats + rabbits + snakes + lizards + hellers + gupas + goldenFishes);
         }
 
         System.out.println("You have: " + quantity + " animals!");
         System.out.println();
 
         if(quantity < 20){
-            ReSupply(maxAnimals - quantity);
+            System.out.println("You have: " + quantity + " animals!");
+            System.out.println("Do you want to resupply?");
+            String answer = scan.nextLine();
+            if(answer.equals("yes")){
+                ReSupply(maxAnimals - quantity);
+            }else{
+                System.out.println("You must resupply later!");
+            }
         }
     }
 

@@ -2,14 +2,12 @@ package Project;
 
 public class Animals {
     private double price;
-    private int quantity;
     private int id;
     private String gender;
     private double age;
 
-    public Animals(double price, int quantity, int id, String gender, double age) {
+    public Animals(double price, int id, String gender, double age) {
         this.price = price;
-        this.quantity = quantity;
         this.id = id;
         this.gender = gender;
         this.age = age;
@@ -21,14 +19,6 @@ public class Animals {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public int getId() {

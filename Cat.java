@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 public class Cat extends Mammals{
     private double price;
-    private int quantity;
     private int id;
     private String gender;
     private double age;
     private String breed;
 
-    public Cat(double price, int quantity, int id, String gender, double age, String breed){
-        super(price, quantity, id, gender, age);
+    public Cat(double price, int id, String gender, double age, String breed){
+        super(price, id, gender, age);
         this.breed = breed;
     }
 
@@ -25,16 +24,6 @@ public class Cat extends Mammals{
     @Override
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    @Override
-    public int getQuantity() {
-        return quantity;
-    }
-
-    @Override
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     @Override
@@ -76,14 +65,34 @@ public class Cat extends Mammals{
     }
 
     public static void addCats(){
-        cats.add(new Cat(1000, 5, 1, "M", 0.3, "Persian"));
-        cats.add(new Cat(1000, 5, 1, "F", 0.3, "Persian"));
-        cats.add(new Cat(900, 5, 2, "M", 0.3, "Scottish fold"));
-        cats.add(new Cat(900, 5, 2, "F", 0.3, "Scottish fold"));
+        cats.add(new Cat(1000, 0, "M", 0.3, "Persian"));
+        cats.add(new Cat(1000, 1, "M", 0.3, "Persian"));
+        cats.add(new Cat(1000, 2, "M", 0.3, "Persian"));
+        cats.add(new Cat(1000, 3, "M", 0.3, "Persian"));
+        cats.add(new Cat(1000, 4, "M", 0.3, "Persian"));
+
+        cats.add(new Cat(1000, 5, "F", 0.3, "Persian"));
+        cats.add(new Cat(1000, 6, "F", 0.3, "Persian"));
+        cats.add(new Cat(1000, 7, "F", 0.3, "Persian"));
+        cats.add(new Cat(1000, 8, "F", 0.3, "Persian"));
+        cats.add(new Cat(1000, 9, "F", 0.3, "Persian"));
+
+        cats.add(new Cat(900, 10, "M", 0.3, "Scottish fold"));
+        cats.add(new Cat(900, 11, "M", 0.3, "Scottish fold"));
+        cats.add(new Cat(900, 12, "M", 0.3, "Scottish fold"));
+        cats.add(new Cat(900, 13, "M", 0.3, "Scottish fold"));
+        cats.add(new Cat(900, 14, "M", 0.3, "Scottish fold"));
+
+        cats.add(new Cat(900, 15, "F", 0.3, "Scottish fold"));
+        cats.add(new Cat(900, 16, "F", 0.3, "Scottish fold"));
+        cats.add(new Cat(900, 17, "F", 0.3, "Scottish fold"));
+        cats.add(new Cat(900, 18, "F", 0.3, "Scottish fold"));
+        cats.add(new Cat(900, 19, "F", 0.3, "Scottish fold"));
+
     }
 
     @Override
     public String toString() {
-        return breed + " " + gender + ": " + quantity + "\n";
+        return breed + " " + gender + ": " + age + " " + price + "\n";
     }
 }

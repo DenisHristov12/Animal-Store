@@ -16,9 +16,7 @@ public class RunProgram {
         Lizard.addLizards();
         Snake.addSnakes();
 
-        Heller.addHellers();
-        Gupa.addGupas();
-        GoldenFish.addGoldenFishes();
+        Fishes.addFishes();
 
 
         System.out.println("Welcome to UKTC Animal Store!");
@@ -59,11 +57,11 @@ public class RunProgram {
                         System.out.println();
 
                         System.out.println("Fishes:");
-                        System.out.println(Heller.hellers.toString());
+                        System.out.println(Fishes.hellers.toString());
 
-                        System.out.println(Gupa.gupas.toString());
+                        System.out.println(Fishes.gupas.toString());
 
-                        System.out.println(GoldenFish.goldenFishes.toString());
+                        System.out.println(Fishes.goldenFishes.toString());
 
                         break;
                     case 2:
@@ -142,9 +140,9 @@ public class RunProgram {
                     case "Rabbit" -> System.out.println(Rabbit.rabits.toString());
                     case "Snake" -> System.out.println(Snake.snakes.toString());
                     case "Lizard" -> System.out.println(Lizard.lizards.toString());
-                    case "Heller" -> System.out.println(Heller.hellers.toString());
-                    case "Gupa" -> System.out.println(Gupa.gupas.toString());
-                    case "GoldenFish" -> System.out.println(GoldenFish.goldenFishes.toString());
+                    case "Heller" -> System.out.println(Fishes.hellers.toString());
+                    case "Gupa" -> System.out.println(Fishes.gupas.toString());
+                    case "GoldenFish" -> System.out.println(Fishes.goldenFishes.toString());
                 }
 
                 System.out.println("Enter what breed/kind and what gender of that animal you want to buy:");

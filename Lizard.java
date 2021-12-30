@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 public class Lizard extends Reptiles{
     private double price;
-    private int quantity;
     private int id;
     private String gender;
     private double age;
     private String kind;
 
-    public Lizard(double price, int quantity, int id, String gender, double age, String kind){
-        super(price, quantity, id, gender, age);
+    public Lizard(double price, int id, String gender, double age, String kind){
+        super(price, id, gender, age);
         this.kind = kind;
     }
 
@@ -25,16 +24,6 @@ public class Lizard extends Reptiles{
     @Override
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    @Override
-    public int getQuantity() {
-        return quantity;
-    }
-
-    @Override
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     @Override
@@ -76,14 +65,33 @@ public class Lizard extends Reptiles{
     }
 
     public static void addLizards(){
-        lizards.add(new Lizard(500, 5, 1, "M", 0.5, "Veiled chameleon"));
-        lizards.add(new Lizard(500, 5, 1, "F", 0.5, "Veiled chameleon"));
-        lizards.add(new Lizard(400, 5, 2, "M", 0.5, "Leoprard gecko"));
-        lizards.add(new Lizard(400, 5, 2, "F", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(500, 0, "M", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(500, 1, "M", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(500, 2, "M", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(500, 3, "M", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(500, 4, "M", 0.5, "Veiled chameleon"));
+
+        lizards.add(new Lizard(500, 5, "F", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(500, 6, "F", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(500, 7, "F", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(500, 8, "F", 0.5, "Veiled chameleon"));
+        lizards.add(new Lizard(500, 9, "F", 0.5, "Veiled chameleon"));
+
+        lizards.add(new Lizard(400, 10, "M", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(400, 11, "M", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(400, 12, "M", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(400, 13, "M", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(400, 14, "M", 0.5, "Leoprard gecko"));
+
+        lizards.add(new Lizard(400, 15, "F", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(400, 16, "F", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(400, 17, "F", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(400, 18, "F", 0.5, "Leoprard gecko"));
+        lizards.add(new Lizard(400, 19, "F", 0.5, "Leoprard gecko"));
     }
 
     @Override
     public String toString() {
-        return kind + " " + gender + ": " + quantity + "\n";
+        return kind + " " + gender + ": " + age + " " + price + "\n";
     }
 }

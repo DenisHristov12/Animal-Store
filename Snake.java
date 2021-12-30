@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 public class Snake extends Reptiles {
     private double price;
-    private int quantity;
     private int id;
     private String gender;
     private double age;
     private String kind;
 
-    public Snake(double price, int quantity, int id, String gender, double age, String kind){
-        super(price, quantity, id, gender, age);
+    public Snake(double price, int id, String gender, double age, String kind){
+        super(price, id, gender, age);
         this.kind = kind;
     }
 
@@ -25,16 +24,6 @@ public class Snake extends Reptiles {
     @Override
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    @Override
-    public int getQuantity() {
-        return quantity;
-    }
-
-    @Override
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     @Override
@@ -76,14 +65,33 @@ public class Snake extends Reptiles {
     }
 
     public static void addSnakes(){
-        snakes.add(new Snake(500, 5, 1, "M", 0.5, "Boa"));
-        snakes.add(new Snake(500, 5, 1, "F", 0.5, "Boa"));
-        snakes.add(new Snake(400, 5, 2, "M", 0.5, "Python"));
-        snakes.add(new Snake(400, 5, 2, "F", 0.5, "Python"));
+        snakes.add(new Snake(500, 0, "M", 0.5, "Boa"));
+        snakes.add(new Snake(500, 1, "M", 0.5, "Boa"));
+        snakes.add(new Snake(500, 2, "M", 0.5, "Boa"));
+        snakes.add(new Snake(500, 3, "M", 0.5, "Boa"));
+        snakes.add(new Snake(500, 4, "M", 0.5, "Boa"));
+
+        snakes.add(new Snake(500, 5, "F", 0.5, "Boa"));
+        snakes.add(new Snake(500, 6, "F", 0.5, "Boa"));
+        snakes.add(new Snake(500, 7, "F", 0.5, "Boa"));
+        snakes.add(new Snake(500, 8, "F", 0.5, "Boa"));
+        snakes.add(new Snake(500, 9, "F", 0.5, "Boa"));
+
+        snakes.add(new Snake(400, 10, "M", 0.5, "Python"));
+        snakes.add(new Snake(400, 11, "M", 0.5, "Python"));
+        snakes.add(new Snake(400, 12, "M", 0.5, "Python"));
+        snakes.add(new Snake(400, 13, "M", 0.5, "Python"));
+        snakes.add(new Snake(400, 14, "M", 0.5, "Python"));
+
+        snakes.add(new Snake(400, 15, "F", 0.5, "Python"));
+        snakes.add(new Snake(400, 16, "F", 0.5, "Python"));
+        snakes.add(new Snake(400, 17, "F", 0.5, "Python"));
+        snakes.add(new Snake(400, 18, "F", 0.5, "Python"));
+        snakes.add(new Snake(400, 19, "F", 0.5, "Python"));
     }
 
     @Override
     public String toString() {
-        return kind + " " + gender + ": " + quantity + "\n";
+        return kind + " " + gender + ": " + age + " " + price + "\n";
     }
 }
