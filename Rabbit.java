@@ -9,9 +9,17 @@ public class Rabbit extends Mammals{
     private double age;
     private String breed;
 
+    public Rabbit(){
+
+    }
+
     public Rabbit(double price, int id, String gender, double age, String breed){
         super(price, id, gender, age);
         this.breed = breed;
+        this.price = price;
+        this.id = id;
+        this.gender = gender;
+        this.age = age;
     }
 
     public static ArrayList<Rabbit> rabits = new ArrayList<>();
@@ -92,6 +100,6 @@ public class Rabbit extends Mammals{
 
     @Override
     public String toString() {
-        return breed + " " + gender + ": " + age + " " + price + "\n";
+        return "Breed: " + breed + " | Gender: " + gender + " | Age: " + age + " | Price: " + price + "\n";
     }
 }

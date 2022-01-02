@@ -1,5 +1,6 @@
 package Project;
 
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 
 public class Dog extends Mammals {
@@ -12,6 +13,14 @@ public class Dog extends Mammals {
     public Dog(double price, int id, String gender, double age, String breed){
         super(price, id, gender, age);
         this.breed = breed;
+        this.price = price;
+        this.id = id;
+        this.gender = gender;
+        this.age = age;
+    }
+
+    public Dog(){
+
     }
 
     public static ArrayList<Dog> dogs = new ArrayList<>();
@@ -92,6 +101,6 @@ public class Dog extends Mammals {
 
     @Override
     public String toString() {
-        return breed + " " + gender + ": " + age + " " + price + "\n";
+        return "Breed: " + breed + " | Gender: " + gender + " | Age: " + age + " | Price: " + price + "\n";
     }
 }

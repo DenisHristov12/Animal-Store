@@ -12,9 +12,17 @@ public class Lizard extends Reptiles{
     public Lizard(double price, int id, String gender, double age, String kind){
         super(price, id, gender, age);
         this.kind = kind;
+        this.price = price;
+        this.id = id;
+        this.gender = gender;
+        this.age = age;
     }
 
     public static ArrayList<Lizard> lizards = new ArrayList<>();
+
+    public Lizard() {
+
+    }
 
     @Override
     public double getPrice() {
@@ -92,6 +100,6 @@ public class Lizard extends Reptiles{
 
     @Override
     public String toString() {
-        return kind + " " + gender + ": " + age + " " + price + "\n";
+        return "Kind: " + kind + " | Gender: " + gender + " | Age: " + age + " | Price: " + price + "\n";
     }
 }

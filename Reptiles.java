@@ -6,6 +6,10 @@ public class Reptiles extends Animals{
     private String gender;
     private double age;
 
+    public Reptiles(){
+
+    }
+
     public Reptiles(double price, int id, String gender, double age) {
         super(price, id, gender, age);
     }

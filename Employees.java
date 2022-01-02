@@ -85,70 +85,24 @@ public class Employees {
 
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                ", salary=" + salary +
-                ", age=" + age +
-                ", graduation='" + graduation + '\'' +
-                ", gender='" + gender + '\'' +
-                ", position='" + position + '\'' +
-                ", experience=" + experience + "\n";
+        return "Name: " + name +
+                " | Salary: " + salary +
+                " | Age: " + age +
+                " | Graduation: " + graduation +
+                " | Gender: " + gender +
+                " | Position: " + position +
+                " | Experience: " + experience + "\n";
     }
 
-    /*
+
     public static void addEmployees(){
-        Employees employee1 = new Employees("Ivan", 600, 17, "Primary education", "M", "Seller", 1);
-        Employees employee2 = new Employees("Maria", 700, 21, "Secondary education", "F", "Cleaner", 5);
-        Employees employee3 = new Employees("Lubomir", 800, 25, "Secondary education", "M", "Seller", 3);
+        Employees employee1 = new Employees("Ivan", 900, 21, "University", "M", "Seller", 3);
+        Employees employee2 = new Employees("Maria", 700, 20, "Secondary education", "F", "Cleaner", 5);
+        Employees employee3 = new Employees("Lubomir", 900, 25, "Secondary education", "M", "Seller", 3);
 
-        System.out.println();
-
-        try{
-            if (employee1.getAge() < 18 || employee1.getGraduation().equals("Primary education") || employee1.getExperience() < 2) {
-                throw new AgeException("This employee doesn't have the requirerements to work!");
-            } else {
-                System.out.println("This employee is hired!");
-                employees.add(employee1);
-            }
-        } catch (AgeException e1) {
-            System.out.println(e1.getMessage());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        } finally{
-
-            try{
-                if (employee2.getAge() < 18 || employee2.getGraduation().equals("Primary education") || employee2.getExperience() < 2) {
-                    throw new AgeException("This employee doesn't have the requirerements to work!");
-                } else {
-                    System.out.println("This employee is hired!");
-                    employees.add(employee1);
-                }
-            } catch (AgeException e2) {
-                System.out.println(e2.getMessage());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }finally {
-
-                try{
-                    if (employee3.getAge() < 18 || employee3.getGraduation().equals("Primary education") || employee3.getExperience() < 2) {
-                        throw new AgeException("This employee doesn't have the requirerements to work!");
-                    } else {
-                        System.out.println("This employee is hired!");
-                        employees.add(employee3);
-                    }
-                } catch (AgeException e3) {
-                    System.out.println(e3.getMessage());
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
-
-        //System.out.println();
-
-        //System.out.println("Hired employees: " + " " + employees.size());
-        //System.out.println();
-
-
-    }*/
+        employees.add(employee1);
+        employees.add(employee2);
+        employees.add(employee3);
+    }
 }
 

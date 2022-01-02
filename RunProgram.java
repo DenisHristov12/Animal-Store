@@ -9,15 +9,8 @@ public class RunProgram {
 
         Store myStore = new Store("Animal Store", "Ivan", "Georgi Dimitrov 57");
 
-        Dog.addDogs();
-        Cat.addCats();
-        Rabbit.addRabbits();
-
-        Lizard.addLizards();
-        Snake.addSnakes();
-
-        Fishes.addFishes();
-
+        Employees.addEmployees();
+        myStore.SupplyAnimals();
 
         System.out.println("Welcome to UKTC Animal Store!");
         System.out.println("If you are owner: \nPress 1");
@@ -30,7 +23,9 @@ public class RunProgram {
                 System.out.println("Welcome owner!");
                 System.out.println("If you want a report of all animals: \nPress 1");
                 System.out.println("If you want to resupply animals: \nPress 2");
-                System.out.println("If you want to hire employees: \nPress 3");
+                System.out.println("If you want a report of all employees: \nPress 3");
+                System.out.println("If you want to hire new employees: \nPress 4");
+                System.out.println("If you want to fire employee/employees: \nPress 5");
 
                 int choice1 = scan.nextInt();
 
@@ -57,21 +52,18 @@ public class RunProgram {
                         System.out.println();
 
                         System.out.println("Fishes:");
-                        System.out.println(Fishes.hellers.toString());
-
-                        System.out.println(Fishes.gupas.toString());
-
-                        System.out.println(Fishes.goldenFishes.toString());
+                        System.out.println(Fishes.fishes.toString());
 
                         break;
                     case 2:
-                        myStore.ReSupply(0);
+                        myStore.ReSupply();
                         break;
                     case 3:
-                        //Employees.addEmployees();
-
-                        ArrayList<Employees> employees = new ArrayList<>();
-
+                        System.out.println("Employees:");
+                        System.out.println(Employees.employees.toString());
+                        System.out.println();
+                        break;
+                    case 4:
                         System.out.println("Input number of employees you want to hire:");
                         int countEmployees = scan.nextInt();
 
@@ -106,7 +98,7 @@ public class RunProgram {
                                     throw new AgeException("This employee doesn't have the requirerements to work!");
                                 } else {
                                     System.out.println("This employee is hired!");
-                                    employees.add(newEmployees);
+                                    Employees.employees.add(newEmployees);
                                 }
                             } catch (AgeException e1) {
                                 System.out.println(e1.getMessage());
@@ -117,7 +109,33 @@ public class RunProgram {
 
                         System.out.println();
                         System.out.println("Employees: ");
-                        System.out.println(employees);
+                        System.out.println(Employees.employees.toString());
+
+                        break;
+                    case 5:
+                        System.out.println("Employees: ");
+                        System.out.println(Employees.employees.toString());
+
+                        System.out.println("Enter which employee you want to fire:");
+                        System.out.println("Name: ");
+                        String name = scan.nextLine();
+                        name = scan.nextLine();
+                        System.out.println("Position: ");
+                        String position = scan.nextLine();
+
+                        System.out.println("What is the reason you want to fire that employee?");
+                        String reason = scan.nextLine();
+
+                        if(reason.equals("Stealing")){
+                            System.out.println("Enter employee's index: ");
+                            int index = scan.nextInt();
+
+                            Employees.employees.remove(index);
+
+                            System.out.println(Employees.employees.toString());
+                        }else{
+                            System.out.println("That is not a reason to fire employee!");
+                        }
 
                         break;
                     default:
@@ -140,9 +158,7 @@ public class RunProgram {
                     case "Rabbit" -> System.out.println(Rabbit.rabits.toString());
                     case "Snake" -> System.out.println(Snake.snakes.toString());
                     case "Lizard" -> System.out.println(Lizard.lizards.toString());
-                    case "Heller" -> System.out.println(Fishes.hellers.toString());
-                    case "Gupa" -> System.out.println(Fishes.gupas.toString());
-                    case "GoldenFish" -> System.out.println(Fishes.goldenFishes.toString());
+                    case "Fish" -> System.out.println(Fishes.fishes.toString());
                 }
 
                 System.out.println("Enter what breed/kind and what gender of that animal you want to buy:");

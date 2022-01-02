@@ -9,12 +9,22 @@ public class Snake extends Reptiles {
     private double age;
     private String kind;
 
+    public Snake() {
+
+    }
+
     public Snake(double price, int id, String gender, double age, String kind){
         super(price, id, gender, age);
         this.kind = kind;
+        this.price = price;
+        this.id = id;
+        this.gender = gender;
+        this.age = age;
     }
 
     public static ArrayList<Snake> snakes = new ArrayList<>();
+
+
 
     @Override
     public double getPrice() {
@@ -92,6 +102,6 @@ public class Snake extends Reptiles {
 
     @Override
     public String toString() {
-        return kind + " " + gender + ": " + age + " " + price + "\n";
+        return "Kind: " + kind + " | Gender: " + gender + " | Age: " + age + " | Price: " + price + "\n";
     }
 }

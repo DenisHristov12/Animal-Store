@@ -12,11 +12,17 @@ public class Fishes extends Animals{
     public Fishes(double price, int id, String gender, double age, String kind) {
         super(price, id, gender, age);
         this.kind = kind;
+        this.price = price;
+        this.id = id;
+        this.gender = gender;
+        this.age = age;
     }
 
-    public static ArrayList<Fishes> hellers = new ArrayList<>();
-    public static ArrayList<Fishes> gupas = new ArrayList<>();
-    public static ArrayList<Fishes> goldenFishes = new ArrayList<>();
+    public static ArrayList<Fishes> fishes = new ArrayList<>();
+
+    public Fishes() {
+
+    }
 
     @Override
     public double getPrice() {
@@ -66,21 +72,21 @@ public class Fishes extends Animals{
     }
 
     public static void addFishes(){
-        hellers.add(new Fishes(100, 1, "M", 0.3, "Heller"));
+        fishes.add(new Fishes(100, 1, "M", 0.3, "Heller"));
 
-        hellers.add(new Fishes(100, 1, "F", 0.3, "Heller"));
+        fishes.add(new Fishes(100, 1, "F", 0.3, "Heller"));
 
-        gupas.add(new Fishes(100, 1, "M", 0.3, "Gupa"));
+        fishes.add(new Fishes(100, 1, "M", 0.3, "Gupa"));
 
-        gupas.add(new Fishes(100, 1, "F", 0.3, "Gupa"));
+        fishes.add(new Fishes(100, 1, "F", 0.3, "Gupa"));
 
-        goldenFishes.add(new Fishes(100, 1, "M", 0.3, "Golden fish"));
+        fishes.add(new Fishes(100, 1, "M", 0.3, "Golden fish"));
 
-        goldenFishes.add(new Fishes(100, 1, "F", 0.3, "Golden fish"));
+        fishes.add(new Fishes(100, 1, "F", 0.3, "Golden fish"));
     }
 
     @Override
     public String toString() {
-        return kind + " " + gender + ": " + age + " " + price + "\n";
+        return "Kind: " + kind + " | Gender: " + gender + " | Age: " + age + " | Price: " + price + "\n";
     }
 }

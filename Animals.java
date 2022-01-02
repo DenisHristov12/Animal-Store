@@ -1,10 +1,17 @@
 package Project;
 
+import java.lang.annotation.Annotation;
+import java.util.ArrayList;
+
 public class Animals {
     private double price;
     private int id;
     private String gender;
     private double age;
+
+    public Animals(){
+
+    }
 
     public Animals(double price, int id, String gender, double age) {
         this.price = price;

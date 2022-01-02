@@ -6,6 +6,10 @@ public class Mammals extends Animals {
     private String gender;
     private double age;
 
+    public Mammals(){
+
+    }
+
     public Mammals(double price, int id, String gender, double age) {
         super(price, id, gender, age);
     }
