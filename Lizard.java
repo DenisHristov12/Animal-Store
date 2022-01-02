@@ -100,6 +100,6 @@ public class Lizard extends Reptiles{
 
     @Override
     public String toString() {
-        return "Kind: " + kind + " | Gender: " + gender + " | Age: " + age + " | Price: " + price + "\n";
+        return "Kind: " + kind + " | Gender: " + gender + " | Age: " + age + " | Price: " + price + " | ID:" + id + "\n";
     }
 }

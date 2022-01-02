@@ -101,6 +101,6 @@ public class Dog extends Mammals {
 
     @Override
     public String toString() {
-        return "Breed: " + breed + " | Gender: " + gender + " | Age: " + age + " | Price: " + price + "\n";
+        return "Breed: " + breed + " | Gender: " + gender + " | Age: " + age + " | Price: " + price + " | ID:" + id + "\n";
     }
 }
