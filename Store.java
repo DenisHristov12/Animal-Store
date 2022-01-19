@@ -1,6 +1,7 @@
 package Project;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Store {
@@ -34,8 +35,39 @@ public class Store {
     }
 
 
-    int freeSpace;
-    public void ReSupply() {
+
+
+    public void AnimalsReport(){
+        System.out.println("Dogs:");
+        System.out.println(Dog.dogs.toString());
+        System.out.println();
+
+        System.out.println("Cats:");
+        System.out.println(Cat.cats.toString());
+        System.out.println();
+
+        System.out.println("Rabits:");
+        System.out.println(Rabbit.rabits.toString());
+        System.out.println();
+
+        System.out.println("Snakes:");
+        System.out.println(Snake.snakes.toString());
+        System.out.println();
+
+        System.out.println("Lizards:");
+        System.out.println(Lizard.lizards.toString());
+        System.out.println();
+
+        System.out.println("Fishes:");
+        System.out.println(Fishes.fishes.toString());
+    }
+
+
+
+
+
+
+    public void ReSupplyAnimals() {
 
         System.out.println("Dogs:");
         System.out.println(Dog.dogs.toString());
@@ -102,16 +134,16 @@ public class Store {
                         newDogs.setBreed(scan.nextLine());
                         newDogs.setBreed(scan.nextLine());
 
-                        System.out.println("Dog added to the store!");
                         System.out.println();
 
                         try {
                             if ((newDogs.getPrice() < 300 || newDogs.getPrice() > 1500) ||
-                                    !newDogs.getGender().equals("M") || !newDogs.getGender().equals("F") ||
-                                    newDogs.getAge() > 3) {
+                                    (!newDogs.getGender().equals("M") && !newDogs.getGender().equals("F")) ||
+                                    newDogs.getAge() > 2) {
                                 throw new AnimalException("This dog can't be added to the store!");
                             } else {
                                 System.out.println("This dog is added to the store!");
+                                System.out.println();
                                 Dog.dogs.add(newDogs);
                                 System.out.println(Dog.dogs.toString());
                             }
@@ -151,12 +183,24 @@ public class Store {
                         newCats.setBreed(scan.nextLine());
                         newCats.setBreed(scan.nextLine());
 
-                        System.out.println("Cat added to the store!");
                         System.out.println();
 
-                        Cat.cats.add(newCats);
+                        try {
+                            if ((newCats.getPrice() < 300 || newCats.getPrice() > 1200) ||
+                                    (!newCats.getGender().equals("M") && !newCats.getGender().equals("F")) ||
+                                    newCats.getAge() > 2) {
+                                throw new AnimalException("This cat can't be added to the store!");
+                            } else {
+                                System.out.println("This cat is added to the store!");
+                                Cat.cats.add(newCats);
+                                System.out.println(Cat.cats.toString());
+                            }
+                        } catch (AnimalException e1) {
+                            System.out.println(e1.getMessage());
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
-                    System.out.println(Cat.cats.toString());
                 }
             } else if (animal.equals("Rabbit")) {
                 System.out.println("Input how much rabbits you want to resupply: ");
@@ -187,12 +231,24 @@ public class Store {
                         newRabbits.setBreed(scan.nextLine());
                         newRabbits.setBreed(scan.nextLine());
 
-                        System.out.println("Rabbit added to the store!");
                         System.out.println();
 
-                        Rabbit.rabits.add(newRabbits);
+                        try {
+                            if ((newRabbits.getPrice() < 300 || newRabbits.getPrice() > 1000) ||
+                                    (!newRabbits.getGender().equals("M") && !newRabbits.getGender().equals("F")) ||
+                                    newRabbits.getAge() > 2) {
+                                throw new AnimalException("This rabbit can't be added to the store!");
+                            } else {
+                                System.out.println("This rabbit is added to the store!");
+                                Rabbit.rabits.add(newRabbits);
+                                System.out.println(Rabbit.rabits.toString());
+                            }
+                        } catch (AnimalException e1) {
+                            System.out.println(e1.getMessage());
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
-                    System.out.println(Rabbit.rabits.toString());
                 }
             } else if (animal.equals("Snake")) {
                 System.out.println("Input how much snakes you want to resupply: ");
@@ -223,12 +279,24 @@ public class Store {
                         newSnakes.setKind(scan.nextLine());
                         newSnakes.setKind(scan.nextLine());
 
-                        System.out.println("Snake added to the store!");
                         System.out.println();
 
-                        Snake.snakes.add(newSnakes);
+                        try {
+                            if ((newSnakes.getPrice() < 500 || newSnakes.getPrice() > 1500) ||
+                                    (!newSnakes.getGender().equals("M") && !newSnakes.getGender().equals("F")) ||
+                                    newSnakes.getAge() > 1) {
+                                throw new AnimalException("This snake can't be added to the store!");
+                            } else {
+                                System.out.println("This snake is added to the store!");
+                                Snake.snakes.add(newSnakes);
+                                System.out.println(Snake.snakes.toString());
+                            }
+                        } catch (AnimalException e1) {
+                            System.out.println(e1.getMessage());
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
-                    System.out.println(Snake.snakes.toString());
                 }
             } else if (animal.equals("Lizard")) {
                 System.out.println("Input how much lizards you want to resupply: ");
@@ -259,12 +327,24 @@ public class Store {
                         newLizards.setKind(scan.nextLine());
                         newLizards.setKind(scan.nextLine());
 
-                        System.out.println("Lizard added to the store!");
                         System.out.println();
 
-                        Lizard.lizards.add(newLizards);
+                        try {
+                            if ((newLizards.getPrice() < 500 || newLizards.getPrice() > 1500) ||
+                                    (!newLizards.getGender().equals("M") && !newLizards.getGender().equals("F")) ||
+                                    newLizards.getAge() > 1) {
+                                throw new AnimalException("This lizard can't be added to the store!");
+                            } else {
+                                System.out.println("This lizard is added to the store!");
+                                Lizard.lizards.add(newLizards);
+                                System.out.println(Lizard.lizards.toString());
+                            }
+                        } catch (AnimalException e1) {
+                            System.out.println(e1.getMessage());
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
-                    System.out.println(Lizard.lizards.toString());
                 }
             } else if (animal.equals("Fish")) {
                 System.out.println("Input how much fishes you want to resupply: ");
@@ -295,12 +375,24 @@ public class Store {
                         newFishes.setKind(scan.nextLine());
                         newFishes.setKind(scan.nextLine());
 
-                        System.out.println("Fish added to the store!");
                         System.out.println();
 
-                        Fishes.fishes.add(newFishes);
+                        try {
+                            if ((newFishes.getPrice() < 50 || newFishes.getPrice() > 300) ||
+                                    (!newFishes.getGender().equals("M") && !newFishes.getGender().equals("F")) ||
+                                    newFishes.getAge() > 0.5) {
+                                throw new AnimalException("This fish can't be added to the store!");
+                            } else {
+                                System.out.println("This fish is added to the store!");
+                                Fishes.fishes.add(newFishes);
+                                System.out.println(Fishes.fishes.toString());
+                            }
+                        } catch (AnimalException e1) {
+                            System.out.println(e1.getMessage());
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
-                    System.out.println(Fishes.fishes.toString());
                 }
             } else {
                 System.out.println("Invalid animal!");
@@ -311,32 +403,71 @@ public class Store {
 
 
 
-    public void AnimalsReport(){
-        System.out.println("Dogs:");
-        System.out.println(Dog.dogs.toString());
-        System.out.println();
 
-        System.out.println("Cats:");
-        System.out.println(Cat.cats.toString());
-        System.out.println();
 
-        System.out.println("Rabits:");
-        System.out.println(Rabbit.rabits.toString());
+    public void FoodReport(){
+        System.out.println("Foods:");
+        System.out.println(AnimalFood.animalFoods.toString());
         System.out.println();
-
-        System.out.println("Snakes:");
-        System.out.println(Snake.snakes.toString());
-        System.out.println();
-
-        System.out.println("Lizards:");
-        System.out.println(Lizard.lizards.toString());
-        System.out.println();
-
-        System.out.println("Fishes:");
-        System.out.println(Fishes.fishes.toString());
     }
 
 
+
+
+
+    public void ReSupplyFoods(){
+        System.out.println("Foods:");
+        System.out.println(AnimalFood.animalFoods.toString());
+        System.out.println();
+
+
+        System.out.println("Input how much food you want to resupply: ");
+        int countResupplyFood = scan.nextInt();
+
+        for (int i = 0; i < countResupplyFood; i++) {
+            AnimalFood newFoods = new AnimalFood();
+
+            System.out.println("Enter food's price: ");
+            newFoods.setPrice(scan.nextDouble());
+
+            System.out.println("Enter what animal is the food for: ");
+            newFoods.setFoodForEachAnimal(scan.nextLine());
+            newFoods.setFoodForEachAnimal(scan.nextLine());
+
+            System.out.println("Enter food's expire date: ");
+            newFoods.setExpireDate(scan.nextLine());
+
+            System.out.println("Enter food's id: ");
+            newFoods.setId(scan.nextInt());
+
+            System.out.println("Enter food's grams: ");
+            newFoods.setGrams(scan.nextInt());
+
+            System.out.println();
+
+            try {
+                if ((newFoods.getPrice() < 10 || newFoods.getPrice() > 80) ||
+                        (!newFoods.getFoodForEachAnimal().equals("Dog") &&
+                                !newFoods.getFoodForEachAnimal().equals("Cat") &&
+                                !newFoods.getFoodForEachAnimal().equals("Rabbit") &&
+                                !newFoods.getFoodForEachAnimal().equals("Snake") &&
+                                !newFoods.getFoodForEachAnimal().equals("Lizard") &&
+                                !newFoods.getFoodForEachAnimal().equals("Fishes")) ||
+                        (newFoods.getGrams() < 300 || newFoods.getGrams() > 2000)) {
+                    throw new FoodException("This food can't be added to the store or you entered food for non existing animal!");
+                } else {
+                    System.out.println("This food is added to the store!");
+                    System.out.println();
+                    AnimalFood.animalFoods.add(newFoods);
+                    System.out.println(AnimalFood.animalFoods.toString());
+                }
+            } catch (FoodException e1) {
+                System.out.println(e1.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
 
 
 

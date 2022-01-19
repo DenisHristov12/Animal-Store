@@ -14,6 +14,7 @@ public class RunProgram {
         myStore.SupplyAnimals();
         AnimalFood.addFoods();
 
+
         System.out.println("Welcome to UKTC Animal Store!");
         System.out.println("If you are owner: \nPress 1");
         System.out.println("If you are customer: \nPress 2");
@@ -25,9 +26,11 @@ public class RunProgram {
                 System.out.println("Welcome owner!");
                 System.out.println("If you want a report of all animals: \nPress 1");
                 System.out.println("If you want to resupply animals: \nPress 2");
-                System.out.println("If you want a report of all employees: \nPress 3");
-                System.out.println("If you want to hire new employees: \nPress 4");
-                System.out.println("If you want to fire employee/employees: \nPress 5");
+                System.out.println("If you want a report of all animal food: \nPress 3");
+                System.out.println("If you want to resupply animal food: \nPress 4");
+                System.out.println("If you want a report of all employees: \nPress 5");
+                System.out.println("If you want to hire new employees: \nPress 6");
+                System.out.println("If you want to fire employee/employees: \nPress 7");
 
                 int choice1 = scan.nextInt();
 
@@ -36,17 +39,23 @@ public class RunProgram {
                         myStore.AnimalsReport();
                         break;
                     case 2:
-                        myStore.ReSupply();
+                        myStore.ReSupplyAnimals();
                         break;
                     case 3:
+                        myStore.FoodReport();
+                        break;
+                    case 4:
+                        myStore.ReSupplyFoods();
+                        break;
+                    case 5:
                         System.out.println("Employees:");
                         System.out.println(Employees.employees.toString());
                         System.out.println();
                         break;
-                    case 4:
+                    case 6:
                         myStore.HireNewEmployees();
                         break;
-                    case 5:
+                    case 7:
                         myStore.FireEmployees();
                         break;
                     default:
@@ -59,7 +68,6 @@ public class RunProgram {
 
                 System.out.println("If you want to buy animals: \nPress 1");
                 System.out.println("If you want to buy animal food: \nPress 2");
-                System.out.println("If you want to buy animal accesoaries: \nPress 3");
 
                 int choice2 = scan.nextInt();
 
@@ -517,46 +525,116 @@ public class RunProgram {
 
                         System.out.println("Enter what animal you want to buy food for:");
 
-                        String animal1;
-                        animal1 = scan.nextLine();
-                        animal1 = scan.nextLine();
+                        String animalFood;
+                        animalFood = scan.nextLine();
+                        animalFood = scan.nextLine();
 
                         for (int i = 0; i < countFood; i++) {
                             System.out.println("Enter id of the food you want to buy:");
                             int id = scan.nextInt();
 
 
-                            if (animal1.equals("Dog") && id == 0) {
+                            if (animalFood.equals("Dog") && id == 0) {
                                 System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(0));
                                 AnimalFood.animalFoods.remove(0);
-                            } else if (animal1.equals("Dog") && id == 1) {
+                            } else if (animalFood.equals("Dog") && id == 1) {
                                 System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(1));
                                 AnimalFood.animalFoods.remove(1);
-                            } else if (animal1.equals("Dog") && id == 2) {
+                            } else if (animalFood.equals("Dog") && id == 2) {
                                 System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(2));
                                 AnimalFood.animalFoods.remove(2);
-                            } else if (animal1.equals("Dog") && id == 3) {
+                            } else if (animalFood.equals("Dog") && id == 3) {
                                 System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(3));
                                 AnimalFood.animalFoods.remove(3);
-                            } else if (animal1.equals("Dog") && id == 4) {
+                            } else if (animalFood.equals("Dog") && id == 4) {
                                 System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(4));
                                 AnimalFood.animalFoods.remove(4);
-                            } else if (animal1.equals("Dog") && id < 0 || id > 4) {
+                            }else if (animalFood.equals("Cat") && id == 5) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(5));
+                                AnimalFood.animalFoods.remove(5);
+                            }else if (animalFood.equals("Cat") && id == 6) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(6));
+                                AnimalFood.animalFoods.remove(6);
+                            }else if (animalFood.equals("Cat") && id == 7) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(7));
+                                AnimalFood.animalFoods.remove(7);
+                            }else if (animalFood.equals("Cat") && id == 8) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(8));
+                                AnimalFood.animalFoods.remove(8);
+                            } else if (animalFood.equals("Cat") && id == 9) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(9));
+                                AnimalFood.animalFoods.remove(9);
+                            } else if (animalFood.equals("Rabbit") && id == 10) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(10));
+                                AnimalFood.animalFoods.remove(10);
+                            } else if (animalFood.equals("Rabbit") && id == 11) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(11));
+                                AnimalFood.animalFoods.remove(11);
+                            } else if (animalFood.equals("Rabbit") && id == 12) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(12));
+                                AnimalFood.animalFoods.remove(12);
+                            }else if (animalFood.equals("Rabbit") && id == 13) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(13));
+                                AnimalFood.animalFoods.remove(13);
+                            }else if (animalFood.equals("Rabbit") && id == 14) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(14));
+                                AnimalFood.animalFoods.remove(14);
+                            }else if (animalFood.equals("Snake") && id == 15) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(15));
+                                AnimalFood.animalFoods.remove(15);
+                            }else if (animalFood.equals("Snake") && id == 16) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(16));
+                                AnimalFood.animalFoods.remove(16);
+                            }else if (animalFood.equals("Snake") && id == 17) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(17));
+                                AnimalFood.animalFoods.remove(17);
+                            }else if (animalFood.equals("Snake") && id == 18) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(18));
+                                AnimalFood.animalFoods.remove(18);
+                            }else if (animalFood.equals("Snake") && id == 19) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(19));
+                                AnimalFood.animalFoods.remove(19);
+                            }else if (animalFood.equals("Lizard") && id == 20) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(20));
+                                AnimalFood.animalFoods.remove(20);
+                            }else if (animalFood.equals("Lizard") && id == 21) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(21));
+                                AnimalFood.animalFoods.remove(21);
+                            }else if (animalFood.equals("Lizard") && id == 22) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(22));
+                                AnimalFood.animalFoods.remove(22);
+                            }else if (animalFood.equals("Lizard") && id == 23) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(23));
+                                AnimalFood.animalFoods.remove(23);
+                            }else if (animalFood.equals("Lizard") && id == 24) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(24));
+                                AnimalFood.animalFoods.remove(24);
+                            }else if (animalFood.equals("Fishes") && id == 25) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(25));
+                                AnimalFood.animalFoods.remove(25);
+                            }else if (animalFood.equals("Fishes") && id == 26) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(26));
+                                AnimalFood.animalFoods.remove(26);
+                            }else if (animalFood.equals("Fishes") && id == 27) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(27));
+                                AnimalFood.animalFoods.remove(27);
+                            }else if (animalFood.equals("Fishes") && id == 28) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(28));
+                                AnimalFood.animalFoods.remove(28);
+                            }else if (animalFood.equals("Fishes") && id == 29) {
+                                System.out.println("Congratulations! You bought -> " + AnimalFood.animalFoods.get(29));
+                                AnimalFood.animalFoods.remove(29);
+                            }else if (animalFood.equals("Dog") && id < 0 || id > 29) {
                                 System.out.println("Wrong ID!");
                                 System.out.println("Enter valid id of the food you want to buy:");
                                 id = scan.nextInt();
                             }
                         }
-
-                        break;
-                    case 3:
-
                         break;
                     default:
                         System.out.println("Invalid option!");
                         break;
                 }
-                //System.out.println(Dog.dogs.toString());
                 break;
             default:
                 System.out.println("Invalid option!");
